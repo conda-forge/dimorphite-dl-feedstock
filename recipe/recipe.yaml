@@ -29,6 +29,9 @@ tests:
       imports:
         - dimorphite_dl
       python_version: ${{ python_min }}.*
+      # disable pip check because of the following error:
+      # dimorphite-dl 1.3.2 requires rdkit-pypi, which is not installed.
+      pip_check: false
 
 about:
   license: Apache-2.0
