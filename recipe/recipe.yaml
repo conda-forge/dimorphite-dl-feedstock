@@ -1,8 +1,3 @@
-# `pip check` fails because of rdkit-pypi
-#  commands:
-#    - pip check
-#  requires:
-#    - pip
 context:
   name: dimorphite-dl
   version: 1.3.2
@@ -12,7 +7,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
   sha256: 4c96065a21f59eed88227bec4538a9559a11c43c0e1875cfcd9004447989ea59
 
 build:
@@ -34,17 +29,13 @@ tests:
       imports:
         - dimorphite_dl
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - python ${{ python_min }}.*
+
 about:
   license: Apache-2.0
   license_file: LICENSE.txt
   summary: |
     Dimorphite-DL adds hydrogen atoms to molecular representations, as appropriate for a user-specified pH range. It is a fast, accurate, accessible, and modular open-source program for enumerating small-molecule ionization states.
-
-
-  homepage: https://www.github.com/Sulstice/dimorphite_dl
+  homepage: https://github.com/Sulstice/dimorphite_dl
 
 extra:
   recipe-maintainers:
