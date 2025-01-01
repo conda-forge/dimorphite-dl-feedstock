@@ -7,7 +7,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
   sha256: 4c96065a21f59eed88227bec4538a9559a11c43c0e1875cfcd9004447989ea59
 
 build:
