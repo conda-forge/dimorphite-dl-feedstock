@@ -3,12 +3,11 @@ About dimorphite-dl-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dimorphite-dl-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.github.com/Sulstice/dimorphite_dl
+Home: https://github.com/Sulstice/dimorphite_dl
 
 Package license: Apache-2.0
 
 Summary: Dimorphite-DL adds hydrogen atoms to molecular representations, as appropriate for a user-specified pH range. It is a fast, accurate, accessible, and modular open-source program for enumerating small-molecule ionization states.
-
 
 Current build status
 ====================
