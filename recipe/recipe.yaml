@@ -1,6 +1,7 @@
 context:
   name: dimorphite-dl
   version: "2.0.1"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -19,26 +20,25 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=61.0
+    - setuptools-scm >=8
   run:
     - python >=${{ python_min }}
-    - rdkit
+    - loguru >=0.7.2,<0.8
+    - rdkit >=2020.3.3,<2026
 
 tests:
   - python:
       imports:
         - dimorphite_dl
       python_version: ${{ python_min }}.*
-      # disable pip check because of the following error:
-      # dimorphite-dl 1.3.2 requires rdkit-pypi, which is not installed.
-      pip_check: false
+      pip_check: true
 
 about:
   license: Apache-2.0
-  license_file: LICENSE.txt
-  summary: |
-    Dimorphite-DL adds hydrogen atoms to molecular representations, as appropriate for a user-specified pH range. It is a fast, accurate, accessible, and modular open-source program for enumerating small-molecule ionization states.
-  homepage: https://github.com/Sulstice/dimorphite_dl
+  license_file: LICENSE.md
+  summary: "Adds or removes hydrogen atoms to achieve the appropriate molecular protonation state for a user-specified pH range"
+  homepage: https://github.com/durrantlab/dimorphite_dl
 
 extra:
   recipe-maintainers:
