@@ -1,6 +1,7 @@
 context:
   name: dimorphite-dl
-  version: 1.3.2
+  version: "2.0.1"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
-  sha256: 4c96065a21f59eed88227bec4538a9559a11c43c0e1875cfcd9004447989ea59
+  sha256: dc4d615536281088da2fdb6398be22dacb0a48a4ca68fc532470ab0174571de1
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -19,26 +20,30 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=61.0
+    - setuptools-scm >=8
   run:
     - python >=${{ python_min }}
-    - rdkit
+    - loguru >=0.7.2,<0.8
+    - rdkit >=2020.3.3,<2026
 
 tests:
   - python:
       imports:
         - dimorphite_dl
       python_version: ${{ python_min }}.*
-      # disable pip check because of the following error:
-      # dimorphite-dl 1.3.2 requires rdkit-pypi, which is not installed.
-      pip_check: false
+      pip_check: true
+  - script:
+      - dimorphite_dl --help
+    requirements:
+      run:
+        - python ${{ python_min }}.*
 
 about:
   license: Apache-2.0
-  license_file: LICENSE.txt
-  summary: |
-    Dimorphite-DL adds hydrogen atoms to molecular representations, as appropriate for a user-specified pH range. It is a fast, accurate, accessible, and modular open-source program for enumerating small-molecule ionization states.
-  homepage: https://github.com/Sulstice/dimorphite_dl
+  license_file: LICENSE.md
+  summary: "Adds or removes hydrogen atoms to achieve the appropriate molecular protonation state for a user-specified pH range"
+  homepage: https://github.com/durrantlab/dimorphite_dl
 
 extra:
   recipe-maintainers:
