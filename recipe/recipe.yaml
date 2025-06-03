@@ -33,6 +33,11 @@ tests:
         - dimorphite_dl
       python_version: ${{ python_min }}.*
       pip_check: true
+  - script:
+      - dimorphite_dl --help
+    requirements:
+      run:
+        - python ${{ python_min }}.*
 
 about:
   license: Apache-2.0
