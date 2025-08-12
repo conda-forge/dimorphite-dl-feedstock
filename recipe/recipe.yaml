@@ -1,6 +1,6 @@
 context:
   name: dimorphite-dl
-  version: "2.0.1"
+  version: "2.0.2"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/dimorphite_dl-${{ version }}.tar.gz
-  sha256: dc4d615536281088da2fdb6398be22dacb0a48a4ca68fc532470ab0174571de1
+  sha256: fa042935312c9681203a3b0f3df04252eb1d17f73cd71c8e7d8ed248380fae9c
 
 build:
   number: 0
